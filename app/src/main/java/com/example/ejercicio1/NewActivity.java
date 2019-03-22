@@ -26,7 +26,7 @@ public class NewActivity extends AppCompatActivity {
         Intent capture_intent = getIntent();
 
         if (capture_intent != null){
-            aux_tex = capture_intent.getStringExtra(AppConstants.TEXT1_KEY));
+            aux_tex = capture_intent.getStringExtra(AppConstants.TEXT1_KEY);
         }
 
         mText.setText(aux_tex);

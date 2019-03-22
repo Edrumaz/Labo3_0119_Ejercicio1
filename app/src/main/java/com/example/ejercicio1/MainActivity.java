@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent m_intent  =new Intent(MainActivity.this, NewActivity.class);
 
-                m_intent.putExtra(AppConstants., "Texto prueba enviado");
+                m_intent.putExtra(AppConstants.TEXT1_KEY, "Texto prueba enviado");
 
                 startActivity(m_intent);
             }
