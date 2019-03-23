@@ -9,27 +9,43 @@ import android.widget.TextView;
 
 import utilities.AppConstants;
 
+import static android.content.Intent.EXTRA_USER;
+
 public class NewActivity extends AppCompatActivity {
 
-    TextView mText;
+    TextView mUser, mPassword, mGender, mEmail;
     Button mSubmitAction;
-    String aux_tex = "Texto quemado";
+    String aux_user = "Texto quemado";
+    String aux_pass = "Texto quemado";
+    String aux_gender = "Texto quemado";
+    String aux_email = "Texto quemado";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
 
-        mText = findViewById(R.id.tv_prueba);
+        mUser = findViewById(R.id.tv_show_user);
+        mPassword = findViewById(R.id.tv_show_password);
+        mGender = findViewById(R.id.tv_show_gender);
+        mEmail = findViewById(R.id.tv_show_email);
         mSubmitAction = findViewById(R.id.btn_share);
 
         Intent capture_intent = getIntent();
+        Bundle extras = capture_intent.getExtras();
 
-        if (capture_intent != null){
-            aux_tex = capture_intent.getStringExtra(AppConstants.TEXT1_KEY);
+        if (extras != null){
+            aux_user = extras.getString("EXTRA_USERNAME");
+            aux_pass = extras.getString("EXTRA_PASSWORD");
+            aux_gender = extras.getString("EXTRA_GENDER");
+            aux_email = extras.getString("EXTRA_EMAIL");
         }
 
-        mText.setText(aux_tex);
+        mUser.setText(aux_user);
+        mPassword.setText(aux_pass);
+        mGender.setText(aux_gender);
+        mEmail.setText(aux_email);
+
         mSubmitAction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,10 +53,9 @@ public class NewActivity extends AppCompatActivity {
 
                 m_intent2.setAction(Intent.ACTION_SEND);
                 m_intent2.setType("text/plain");
-                m_intent2.putExtra(Intent.EXTRA_TEXT, aux_tex);
+                m_intent2.putExtra(Intent.EXTRA_TEXT, aux_user);
                 startActivity(m_intent2);
             }
-
         });
     }
 }

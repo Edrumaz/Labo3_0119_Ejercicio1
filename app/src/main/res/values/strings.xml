@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Ejercicio1</string>
+    <string name="user">Usuario:</string>
+    <string name="pass">Contraseña:</string>
+    <string name="email">Correo:</string>
+    <string name="gender">Genero:</string>
+    <string name="submit">Enviar</string>
+    <string name="share">Comparir</string>
+    <string name="hint_user">Ingrese su Usuario</string>
+    <string name="hint_pass">Ingrese su Contraseña</string>
+    <string name="hint_email">Ingrese su Correo</string>
+    <string name="hint_gender">Ingrese su Genero</string>
 </resources>

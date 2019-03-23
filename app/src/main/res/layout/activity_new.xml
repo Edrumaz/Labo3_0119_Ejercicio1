@@ -4,23 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:gravity="center"
     tools:context=".NewActivity">
 
     <TextView
-        android:id="@+id/tv_prueba"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_user"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Test Text"/>
+        android:padding="16sp"
+        android:text="@string/user"
+        app:layout_constraintLeft_toLeftOf="@id/et_user"
+        app:layout_constraintTop_toTopOf="@id/et_pass"
+        />
+
+    <TextView
+        android:id="@+id/tv_show_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:text="@string/user"/>
+
+    <TextView
+        android:id="@+id/tv_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16sp"
+        android:text="@string/pass"/>
+
+    <TextView
+        android:id="@+id/tv_show_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16sp"
+        android:text="@string/pass"/>
+
+    <TextView
+        android:id="@+id/tv_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16sp"
+        android:text="@string/gender"/>
+
+    <TextView
+        android:id="@+id/tv_show_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="16sp"
+        android:text="@string/gender"/>
+
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16sp"
+        android:text="@string/email"/>
+
+    <TextView
+        android:id="@+id/tv_show_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16sp"
+        android:text="@string/email"/>
 
     <Button
-
         android:id="@+id/btn_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Compartir" />
-
-
-
+        android:gravity="center_vertical"
+        android:text="@string/share" />
 </LinearLayout>
