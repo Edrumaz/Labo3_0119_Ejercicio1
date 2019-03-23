@@ -10,19 +10,35 @@ import utilities.AppConstants;
 public class ShareActivity extends AppCompatActivity {
 
     TextView mSharedText;
-    private String aux_text;
+    private String sharedText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
 
-        mSharedText.findViewById(R.id.shared_text);
+        mSharedText = findViewById(R.id.shared_text);
 
-        Intent capture_intent = getIntent();
+        // Get intent, action and MIME type
+        Intent intent = getIntent();
+        String action = intent.getAction();
+        String type = intent.getType();
 
-        if (capture_intent != null){
-            aux_text = capture_intent.getStringExtra(AppConstants.TEXT1_KEY);
+        if (Intent.ACTION_SEND.equals(action) && type != null) {
+            if ("text/plain".equals(type)) {
+                handleSendText(intent); // Handle text being sent
+            }
+        }
+
+    }
+
+    void handleSendText(Intent intent) {
+        sharedText = intent.getStringExtra(Intent.EXTRA_TEXT);
+        if (sharedText != null) {
+
+            mSharedText.setText(sharedText);
         }
     }
+
+
 }

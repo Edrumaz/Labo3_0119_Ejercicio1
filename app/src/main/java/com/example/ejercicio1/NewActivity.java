@@ -53,7 +53,7 @@ public class NewActivity extends AppCompatActivity {
 
                 m_intent2.setAction(Intent.ACTION_SEND);
                 m_intent2.setType("text/plain");
-                m_intent2.putExtra(Intent.EXTRA_TEXT, aux_user);
+                m_intent2.putExtra(Intent.EXTRA_TEXT, "Usuario: " + aux_user + "\n" + "Contraseña: " + aux_pass + "\n" + "Genero: " + aux_gender + "\n" + "Correo: " + aux_email + "\n");
                 startActivity(m_intent2);
             }
         });
